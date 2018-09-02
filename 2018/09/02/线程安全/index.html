@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="写在最前面最近一段时间，一直在学习网络IO编程，认识了五种IO模型：（1）阻塞I/O（blocking I/O）（2）非阻塞I/O （nonblocking I/O）（3） I/O复用(select 和poll) （I/O multiplexing）（4）信号驱动I/O （signal driven I/O (SIGIO)）（5）异步I/O （asynchronous I/O (the POSIX">
+<meta name="description" content="一、线程安全1.什么是线程安全？   当多个线程访问某一类(对象或方法)时，这个类(对象或方法)始终表现出正确的行为，则该类(对象或方法)就是线程安全的，当线程同步时即保证了线程安全。多线程访问时，采用加锁机制，当一个线程访问该类的数据时，进行保护，其他进程不能进行访问直到该线程读取完防止数据不一致或者数据污染。 2.线程安全的起因   线程安全由全局变量和静态变量引起，若线程对全局变量和静态变量">
 <meta property="og:type" content="article">
-<meta property="og:title" content="网络编程">
-<meta property="og:url" content="http://qiqibest.top/2018/09/01/网络编程/index.html">
+<meta property="og:title" content="线程安全">
+<meta property="og:url" content="http://qiqibest.top/2018/09/02/线程安全/index.html">
 <meta property="og:site_name" content="Ricardo&#39;s Blog">
-<meta property="og:description" content="写在最前面最近一段时间，一直在学习网络IO编程，认识了五种IO模型：（1）阻塞I/O（blocking I/O）（2）非阻塞I/O （nonblocking I/O）（3） I/O复用(select 和poll) （I/O multiplexing）（4）信号驱动I/O （signal driven I/O (SIGIO)）（5）异步I/O （asynchronous I/O (the POSIX">
+<meta property="og:description" content="一、线程安全1.什么是线程安全？   当多个线程访问某一类(对象或方法)时，这个类(对象或方法)始终表现出正确的行为，则该类(对象或方法)就是线程安全的，当线程同步时即保证了线程安全。多线程访问时，采用加锁机制，当一个线程访问该类的数据时，进行保护，其他进程不能进行访问直到该线程读取完防止数据不一致或者数据污染。 2.线程安全的起因   线程安全由全局变量和静态变量引起，若线程对全局变量和静态变量">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-01T09:02:13.150Z">
+<meta property="og:updated_time" content="2018-09-02T12:17:01.183Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="网络编程">
-<meta name="twitter:description" content="写在最前面最近一段时间，一直在学习网络IO编程，认识了五种IO模型：（1）阻塞I/O（blocking I/O）（2）非阻塞I/O （nonblocking I/O）（3） I/O复用(select 和poll) （I/O multiplexing）（4）信号驱动I/O （signal driven I/O (SIGIO)）（5）异步I/O （asynchronous I/O (the POSIX">
+<meta name="twitter:title" content="线程安全">
+<meta name="twitter:description" content="一、线程安全1.什么是线程安全？   当多个线程访问某一类(对象或方法)时，这个类(对象或方法)始终表现出正确的行为，则该类(对象或方法)就是线程安全的，当线程同步时即保证了线程安全。多线程访问时，采用加锁机制，当一个线程访问该类的数据时，进行保护，其他进程不能进行访问直到该线程读取完防止数据不一致或者数据污染。 2.线程安全的起因   线程安全由全局变量和静态变量引起，若线程对全局变量和静态变量">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://qiqibest.top/2018/09/01/网络编程/"/>
+  <link rel="canonical" href="http://qiqibest.top/2018/09/02/线程安全/"/>
 
 
 
 
 
-  <title>网络编程 | Ricardo's Blog</title>
+  <title>线程安全 | Ricardo's Blog</title>
   
 
 
@@ -272,7 +272,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://qiqibest.top/2018/09/01/网络编程/">
+    <link itemprop="mainEntityOfPage" href="http://qiqibest.top/2018/09/02/线程安全/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ricardo">
@@ -289,7 +289,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">网络编程</h1>
+          <h1 class="post-title" itemprop="name headline">线程安全</h1>
         
 
         <div class="post-meta">
@@ -301,8 +301,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-01T17:01:16+08:00">
-                2018-09-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-02T20:15:33+08:00">
+                2018-09-02
               </time>
             
 
@@ -339,13 +339,16 @@
       
 
       
-        <h2 id="写在最前面"><a href="#写在最前面" class="headerlink" title="写在最前面"></a>写在最前面</h2><p>最近一段时间，一直在学习网络IO编程，认识了五种IO模型：<br>（1）阻塞I/O（blocking I/O）<br>（2）非阻塞I/O （nonblocking I/O）<br>（3） I/O复用(select 和poll) （I/O multiplexing）<br>（4）信号驱动I/O （signal driven I/O (SIGIO)）<br>（5）异步I/O （asynchronous I/O (the POSIX aio_functions)）<br>其中除了信号驱动I/O以外，其余四种较为常见，在学习IO模型之前，应该先了解同步、异步，阻塞非阻塞的概念，而这些概念都是源自于操作系统中的进程管理。</p>
-<h3 id="一、同步"><a href="#一、同步" class="headerlink" title="一、同步"></a>一、同步</h3><p>   1.同步亦称直接制约关系，为完成某种任务而建立的两种两个或多个线程，这些进程因为需要在某些位置上协助它们的工作次序而等待、传递信息所产生的制约关系。进程间的直接制约关系就是源于线程间的相互合作。<br>    2.举个栗子：输入进程A通过单缓冲向进程B提供数据。当该缓冲区为空时，进程B不能获得所需的数据而阻塞，一旦进程A将数据送入缓冲中，进程B被唤醒。反之，当缓冲区满的时候，进程A被阻塞，仅当进程B取走缓冲数据时，才唤醒进程A。<br>    3.生活中的栗子：小明去奶茶店买奶茶，交完钱后就一直等着奶茶做出来取奶茶。</p>
-<h3 id="二、异步"><a href="#二、异步" class="headerlink" title="二、异步"></a>二、异步</h3><p>   1.与同步相对应，异步指的是让CPU暂时搁置当前请求的响应，处理下一个请求，当通过轮询或其他方式得到回调通知后，开始运行。多线程将异步操作放入另一线程中运行，通过轮询或回调方法得到完成通知，但是完成端口，由操作系统接管异步操作的调度，通过硬件中断，在完成时触发回调方法。<br>   2.生活中的栗子：小明买奶茶交完钱之后，店员给小明一张小票，等小明的奶茶做好了，就叫小明来取。</p>
-<h3 id="三、阻塞"><a href="#三、阻塞" class="headerlink" title="三、阻塞"></a>三、阻塞</h3><p>   1.进程正在等待某一事件而暂停运行，如等待某资源为可用（不包括处理器）或等待输入/输出完成。即使处理器空闲，该进程也不能运行。<br>     2.正在执行的进程，由于期待的某些事件未发生，如请求系统资源失败、等待某种操作完成、新数据尚未到达或无新工作可做等，则由系统自动执行阻塞原语（block），使自己由运行状态变为阻塞状态。可见，进程的阻塞是进程自身的一种主动行为，也因此只有处于运行态的进程（获得CPU），才可能将其转为阻塞状态。<br>     3.阻塞的过程：（1）.找到将要被阻塞进程的标识号及其PCB；（2）.若该进程为执行状态，则保护现场，将其状态改为阻塞状态，停止运行；（3）.并把该PCB插入到相应事件的等待队列中。<br>     4.阻塞与同步的区别：（1）同步是过程，而阻塞是一个线程的状态。（2）同步调用时，很多时候线程还“活着”，处于激活状态，逻辑上当前函数没有返回，此时，线程还可以做其他的事情。（3）阻塞状态下，如果没有数据的情况下调用该函数，当前线程会被挂起，直到得到数据。<br>     5.阻塞分为两种，同步阻塞与异步阻塞</p>
-<h3 id="四、非阻塞"><a href="#四、非阻塞" class="headerlink" title="四、非阻塞"></a>四、非阻塞</h3><p>  1.与阻塞相对应，当等待的资源不可用时，IO请求离开返回，返回数据标识不可用。<br>  2.非阻塞也分为两种，同步非阻塞与异步非阻塞.</p>
-<h3 id="五、四种IO模型场景"><a href="#五、四种IO模型场景" class="headerlink" title="五、四种IO模型场景"></a>五、四种IO模型场景</h3><p>1.同步阻塞：<br>小明买奶茶付完钱之后，等着取奶茶，中途什么事情都不做（小明等奶茶的行为称为阻塞）。<br>2.同步阻塞：<br>小明买奶茶付完钱之后，等着取奶茶，中途边看手机，边看奶茶有没有做好（小明等奶茶的行为称为非阻塞）。<br>3.异步阻塞：<br>小明买奶茶付完钱之后，店员给小明一张小票，但是小明还是这样等着，什么也不做（小明的行为称为阻塞）。<br>4.异步非阻塞：<br>小明买奶茶付完钱之后，店员给小明一张小票，然后小明在奶茶店座位上玩手机，过一段时间后，店员说奶茶做好了，小明再去取（小明的行为称为非阻塞）。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>  分清同步与异步，阻塞与非阻塞的概念很重要，分清楚之后，再联系起来理解。理解之后，再通过模型实现可以相互加深理解。</p>
+        <h2 id="一、线程安全"><a href="#一、线程安全" class="headerlink" title="一、线程安全"></a>一、线程安全</h2><h3 id="1-什么是线程安全？"><a href="#1-什么是线程安全？" class="headerlink" title="1.什么是线程安全？"></a>1.什么是线程安全？</h3><p>   当多个线程访问某一类(对象或方法)时，这个类(对象或方法)始终表现出正确的行为，则该类(对象或方法)就是线程安全的，当线程同步时即保证了线程安全。多线程访问时，采用加锁机制，当一个线程访问该类的数据时，进行保护，其他进程不能进行访问直到该线程读取完防止数据不一致或者数据污染。</p>
+<h3 id="2-线程安全的起因"><a href="#2-线程安全的起因" class="headerlink" title="2.线程安全的起因"></a>2.线程安全的起因</h3><p>   线程安全由全局变量和静态变量引起，若线程对全局变量和静态变量只有读操作，而无写操作，则线程安全；相反，若多个线程对数据进行更改，则导致数据不一致，影响线程安全。   </p>
+<h3 id="3-线程不安全"><a href="#3-线程不安全" class="headerlink" title="3.线程不安全"></a>3.线程不安全</h3><p>线程不安全：与线程安全对立，即不提供数据保护，可能会出现多个线程先后更改数据造成所得到的数据是脏数据。</p>
+<h2 id="二、线程安全的三大特性"><a href="#二、线程安全的三大特性" class="headerlink" title="二、线程安全的三大特性"></a>二、线程安全的三大特性</h2><h3 id="1-原子性"><a href="#1-原子性" class="headerlink" title="1.原子性"></a>1.原子性</h3><p>  指在一个操作中，cpu不可以在中途暂停再调度，既不被中断操作，要不执行完成，要么不执行。如果一个操作是原子性的，那么线程并发情况下，不会出现变量被修改的情况。</p>
+<h3 id="2-可见性"><a href="#2-可见性" class="headerlink" title="2.可见性"></a>2.可见性</h3><p>即线程之间的可见性，当一个线程修改线程共享中的变量时，别的线程能立马得知这个修改。</p>
+<h3 id="3-有序性"><a href="#3-有序性" class="headerlink" title="3.有序性"></a>3.有序性</h3><p>  指程序在执行时，程序的执行代码顺序与语句顺序一致。</p>
+<h2 id="三、synchronized、Lock、volatile"><a href="#三、synchronized、Lock、volatile" class="headerlink" title="三、synchronized、Lock、volatile"></a>三、synchronized、Lock、volatile</h2><h3 id="1-synchronized"><a href="#1-synchronized" class="headerlink" title="1.synchronized"></a>1.synchronized</h3><p>（1）synchronize是java语言的关键字，其作用是：控制线程同步，实现互斥，保证在多线程环境下，不被多个线程同时执行，确保数据的完整性。<br>（2）从程序性能角度上考虑：在使用synchronized关键字时，要尽量减小它的使用范围，减少资源浪费。<br>（3）可能出现的问题：多线程访问时，使用synchronized关键字后，得到锁的线程可以执行synchronized里的代码，得不到的线程会不断去尝试去获得锁，直到获得锁，因此会出现锁竞争的问题。<br>（4）在操作系统中多个线程可以共享系统中的各种资源，但其中许多资源只能一次只能为一个进程所使用，因此将一次仅允许一个进程使用的资源称为临界资源，而在进程中，访问临界资源的那段代码称为临界区，使用synchronized关键字的代码块可以称之为临界区。</p>
+<h3 id="2-Lock"><a href="#2-Lock" class="headerlink" title="2.Lock"></a>2.Lock</h3><p>（1）Lock是接口，通过接口的实现类可以实现同步。<br>（2）通过Lock可以解决synchronized的锁竞争问题，让等待锁的线程响应中断，不会让等待的线程无期限地等待下去。<br>（3）通过Lock可以知道锁有没有成功被获取<br>（4）与synchronized的不同，Lock需要手动去释放锁，否则会导致死锁现象。synchronized可以加在方法上，也可以加在特定的代码块中，括号中表示需要锁的对象，而Lock需要显示指定起始位置与终止位置。</p>
+<h3 id="3-volatile"><a href="#3-volatile" class="headerlink" title="3.volatile"></a>3.volatile</h3><p>（1）volatile是一个类型修饰符，其作用是作为指令关键字，确保本条指令不会因编译器的优化而省略，且要求每次直接读值。<br>（2）volatile关键字强制从公共堆栈中取得变量的值，而不是线程私有的数据栈中取得变量。<br>（3）volatile的两大特性：<br>1.禁止指令的重排序优化<br>防止虚拟机为了降低内存操作速度远慢于CPU运行速度所带来的CPU空置的影响，而按照自己的一些规则将程序编写顺序打乱。<br>2.提供内存可见性（变量在多个线程之间可见）。 </p>
+<h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><p>1.在 Java 中 volatile、synchronized实现可见性。<br>2.synchronized 和在 lock、unlock 中操作保证原子性。<br>3.Java 语言提供了 volatile 和 synchronized 两个关键字来保证线程之间操作的有序性，volatile 是因为其本身包含“禁止指令重排序”的语义，synchronized 是由“一个变量在同一个时刻只允许一条线程对其进行 lock 操作”这条规则获得的，此规则决定了持有同一个对象锁的两个同步块只能串行执行。</p>
 
       
     </div>
@@ -395,7 +398,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://qiqibest.top/2018/09/01/网络编程/" title="网络编程">http://qiqibest.top/2018/09/01/网络编程/</a>
+    <a href="http://qiqibest.top/2018/09/02/线程安全/" title="线程安全">http://qiqibest.top/2018/09/02/线程安全/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -417,8 +420,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/01/排序/" rel="next" title="排序">
-                <i class="fa fa-chevron-left"></i> 排序
+              <a href="/2018/09/01/ArrayList与LinkedList/" rel="next" title="ArrayList与LinkedList">
+                <i class="fa fa-chevron-left"></i> ArrayList与LinkedList
               </a>
             
           </div>
@@ -426,10 +429,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/01/ArrayList与LinkedList/" rel="prev" title="ArrayList与LinkedList">
-                ArrayList与LinkedList <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -545,7 +544,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在最前面"><span class="nav-number">1.</span> <span class="nav-text">写在最前面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、同步"><span class="nav-number">1.1.</span> <span class="nav-text">一、同步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、异步"><span class="nav-number">1.2.</span> <span class="nav-text">二、异步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、阻塞"><span class="nav-number">1.3.</span> <span class="nav-text">三、阻塞</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、非阻塞"><span class="nav-number">1.4.</span> <span class="nav-text">四、非阻塞</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、四种IO模型场景"><span class="nav-number">1.5.</span> <span class="nav-text">五、四种IO模型场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、线程安全"><span class="nav-number">1.</span> <span class="nav-text">一、线程安全</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-什么是线程安全？"><span class="nav-number">1.1.</span> <span class="nav-text">1.什么是线程安全？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-线程安全的起因"><span class="nav-number">1.2.</span> <span class="nav-text">2.线程安全的起因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-线程不安全"><span class="nav-number">1.3.</span> <span class="nav-text">3.线程不安全</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、线程安全的三大特性"><span class="nav-number">2.</span> <span class="nav-text">二、线程安全的三大特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-原子性"><span class="nav-number">2.1.</span> <span class="nav-text">1.原子性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-可见性"><span class="nav-number">2.2.</span> <span class="nav-text">2.可见性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-有序性"><span class="nav-number">2.3.</span> <span class="nav-text">3.有序性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、synchronized、Lock、volatile"><span class="nav-number">3.</span> <span class="nav-text">三、synchronized、Lock、volatile</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-synchronized"><span class="nav-number">3.1.</span> <span class="nav-text">1.synchronized</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Lock"><span class="nav-number">3.2.</span> <span class="nav-text">2.Lock</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-volatile"><span class="nav-number">3.3.</span> <span class="nav-text">3.volatile</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、总结"><span class="nav-number">4.</span> <span class="nav-text">四、总结</span></a></li></ol></div>
             
 
           </div>
