@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="写在最前面最近一段时间，一直在学习网络IO编程，认识了五种IO模型：（1）阻塞I/O（blocking I/O）（2）非阻塞I/O （nonblocking I/O）（3） I/O复用(select 和poll) （I/O multiplexing）（4）信号驱动I/O （signal driven I/O (SIGIO)）（5）异步I/O （asynchronous I/O (the POSIX">
+<meta name="description" content="学习与工作&amp;emsp;&amp;emsp;大概半年前，我身处一个拥挤的小房间、里面挤着八个人。每天清晨六点半，我都会起来看书，恶补大学所没做的事情，到了八点左右，再去上课学习代码。那个时候，虽然条件艰苦一点，可是身边有同学，能够坚持下来。并且，下午上完课以后，我还会坚持去跑半个小时的步。&amp;emsp;&amp;emsp;后来，我找了实习的工作。在工作的地方，我待的很不开心，因为它总是要让我们这些实习生加班。在这家公">
 <meta property="og:type" content="article">
-<meta property="og:title" content="网络编程">
-<meta property="og:url" content="http://qiqibest.top/2018/09/01/网络编程/index.html">
+<meta property="og:title" content="反思">
+<meta property="og:url" content="http://qiqibest.top/2019/04/28/反思/index.html">
 <meta property="og:site_name" content="Ricardo&#39;s Blog">
-<meta property="og:description" content="写在最前面最近一段时间，一直在学习网络IO编程，认识了五种IO模型：（1）阻塞I/O（blocking I/O）（2）非阻塞I/O （nonblocking I/O）（3） I/O复用(select 和poll) （I/O multiplexing）（4）信号驱动I/O （signal driven I/O (SIGIO)）（5）异步I/O （asynchronous I/O (the POSIX">
+<meta property="og:description" content="学习与工作&amp;emsp;&amp;emsp;大概半年前，我身处一个拥挤的小房间、里面挤着八个人。每天清晨六点半，我都会起来看书，恶补大学所没做的事情，到了八点左右，再去上课学习代码。那个时候，虽然条件艰苦一点，可是身边有同学，能够坚持下来。并且，下午上完课以后，我还会坚持去跑半个小时的步。&amp;emsp;&amp;emsp;后来，我找了实习的工作。在工作的地方，我待的很不开心，因为它总是要让我们这些实习生加班。在这家公">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-01T09:02:13.150Z">
+<meta property="og:updated_time" content="2019-04-29T02:46:11.600Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="网络编程">
-<meta name="twitter:description" content="写在最前面最近一段时间，一直在学习网络IO编程，认识了五种IO模型：（1）阻塞I/O（blocking I/O）（2）非阻塞I/O （nonblocking I/O）（3） I/O复用(select 和poll) （I/O multiplexing）（4）信号驱动I/O （signal driven I/O (SIGIO)）（5）异步I/O （asynchronous I/O (the POSIX">
+<meta name="twitter:title" content="反思">
+<meta name="twitter:description" content="学习与工作&amp;emsp;&amp;emsp;大概半年前，我身处一个拥挤的小房间、里面挤着八个人。每天清晨六点半，我都会起来看书，恶补大学所没做的事情，到了八点左右，再去上课学习代码。那个时候，虽然条件艰苦一点，可是身边有同学，能够坚持下来。并且，下午上完课以后，我还会坚持去跑半个小时的步。&amp;emsp;&amp;emsp;后来，我找了实习的工作。在工作的地方，我待的很不开心，因为它总是要让我们这些实习生加班。在这家公">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://qiqibest.top/2018/09/01/网络编程/"/>
+  <link rel="canonical" href="http://qiqibest.top/2019/04/28/反思/"/>
 
 
 
 
 
-  <title>网络编程 | Ricardo's Blog</title>
+  <title>反思 | Ricardo's Blog</title>
   
 
 
@@ -274,7 +274,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://qiqibest.top/2018/09/01/网络编程/">
+    <link itemprop="mainEntityOfPage" href="http://qiqibest.top/2019/04/28/反思/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ricardo">
@@ -291,7 +291,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">网络编程</h1>
+          <h1 class="post-title" itemprop="name headline">反思</h1>
         
 
         <div class="post-meta">
@@ -303,8 +303,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-01T17:01:16+08:00">
-                2018-09-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-28T21:49:49+08:00">
+                2019-04-28
               </time>
             
 
@@ -341,13 +341,11 @@
       
 
       
-        <h2 id="写在最前面"><a href="#写在最前面" class="headerlink" title="写在最前面"></a>写在最前面</h2><p>最近一段时间，一直在学习网络IO编程，认识了五种IO模型：<br>（1）阻塞I/O（blocking I/O）<br>（2）非阻塞I/O （nonblocking I/O）<br>（3） I/O复用(select 和poll) （I/O multiplexing）<br>（4）信号驱动I/O （signal driven I/O (SIGIO)）<br>（5）异步I/O （asynchronous I/O (the POSIX aio_functions)）<br>其中除了信号驱动I/O以外，其余四种较为常见，在学习IO模型之前，应该先了解同步、异步，阻塞非阻塞的概念，而这些概念都是源自于操作系统中的进程管理。</p>
-<h3 id="一、同步"><a href="#一、同步" class="headerlink" title="一、同步"></a>一、同步</h3><p>   1.同步亦称直接制约关系，为完成某种任务而建立的两种两个或多个线程，这些进程因为需要在某些位置上协助它们的工作次序而等待、传递信息所产生的制约关系。进程间的直接制约关系就是源于线程间的相互合作。<br>    2.举个栗子：输入进程A通过单缓冲向进程B提供数据。当该缓冲区为空时，进程B不能获得所需的数据而阻塞，一旦进程A将数据送入缓冲中，进程B被唤醒。反之，当缓冲区满的时候，进程A被阻塞，仅当进程B取走缓冲数据时，才唤醒进程A。<br>    3.生活中的栗子：小明去奶茶店买奶茶，交完钱后就一直等着奶茶做出来取奶茶。</p>
-<h3 id="二、异步"><a href="#二、异步" class="headerlink" title="二、异步"></a>二、异步</h3><p>   1.与同步相对应，异步指的是让CPU暂时搁置当前请求的响应，处理下一个请求，当通过轮询或其他方式得到回调通知后，开始运行。多线程将异步操作放入另一线程中运行，通过轮询或回调方法得到完成通知，但是完成端口，由操作系统接管异步操作的调度，通过硬件中断，在完成时触发回调方法。<br>   2.生活中的栗子：小明买奶茶交完钱之后，店员给小明一张小票，等小明的奶茶做好了，就叫小明来取。</p>
-<h3 id="三、阻塞"><a href="#三、阻塞" class="headerlink" title="三、阻塞"></a>三、阻塞</h3><p>   1.进程正在等待某一事件而暂停运行，如等待某资源为可用（不包括处理器）或等待输入/输出完成。即使处理器空闲，该进程也不能运行。<br>     2.正在执行的进程，由于期待的某些事件未发生，如请求系统资源失败、等待某种操作完成、新数据尚未到达或无新工作可做等，则由系统自动执行阻塞原语（block），使自己由运行状态变为阻塞状态。可见，进程的阻塞是进程自身的一种主动行为，也因此只有处于运行态的进程（获得CPU），才可能将其转为阻塞状态。<br>     3.阻塞的过程：（1）.找到将要被阻塞进程的标识号及其PCB；（2）.若该进程为执行状态，则保护现场，将其状态改为阻塞状态，停止运行；（3）.并把该PCB插入到相应事件的等待队列中。<br>     4.阻塞与同步的区别：（1）同步是过程，而阻塞是一个线程的状态。（2）同步调用时，很多时候线程还“活着”，处于激活状态，逻辑上当前函数没有返回，此时，线程还可以做其他的事情。（3）阻塞状态下，如果没有数据的情况下调用该函数，当前线程会被挂起，直到得到数据。<br>     5.阻塞分为两种，同步阻塞与异步阻塞</p>
-<h3 id="四、非阻塞"><a href="#四、非阻塞" class="headerlink" title="四、非阻塞"></a>四、非阻塞</h3><p>  1.与阻塞相对应，当等待的资源不可用时，IO请求离开返回，返回数据标识不可用。<br>  2.非阻塞也分为两种，同步非阻塞与异步非阻塞.</p>
-<h3 id="五、四种IO模型场景"><a href="#五、四种IO模型场景" class="headerlink" title="五、四种IO模型场景"></a>五、四种IO模型场景</h3><p>1.同步阻塞：<br>小明买奶茶付完钱之后，等着取奶茶，中途什么事情都不做（小明等奶茶的行为称为阻塞）。<br>2.同步阻塞：<br>小明买奶茶付完钱之后，等着取奶茶，中途边看手机，边看奶茶有没有做好（小明等奶茶的行为称为非阻塞）。<br>3.异步阻塞：<br>小明买奶茶付完钱之后，店员给小明一张小票，但是小明还是这样等着，什么也不做（小明的行为称为阻塞）。<br>4.异步非阻塞：<br>小明买奶茶付完钱之后，店员给小明一张小票，然后小明在奶茶店座位上玩手机，过一段时间后，店员说奶茶做好了，小明再去取（小明的行为称为非阻塞）。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>  分清同步与异步，阻塞与非阻塞的概念很重要，分清楚之后，再联系起来理解。理解之后，再通过模型实现可以相互加深理解。</p>
+        <h1 id="学习与工作"><a href="#学习与工作" class="headerlink" title="学习与工作"></a>学习与工作</h1><p><font size="4"><br>&emsp;&emsp;大概半年前，我身处一个拥挤的小房间、里面挤着八个人。每天清晨六点半，我都会起来看书，恶补大学所没做的事情，到了八点左右，再去上课学习代码。那个时候，虽然条件艰苦一点，可是身边有同学，能够坚持下来。并且，下午上完课以后，我还会坚持去跑半个小时的步。<br>&emsp;&emsp;后来，我找了实习的工作。在工作的地方，我待的很不开心，因为它总是要让我们这些实习生加班。在这家公司，我通宵了几次，经常凌晨的时候到家。刚开始实习的那会儿，由于上班晚，我还是会早起学习，加强自己。随着在这家公司待着越久，我起床的时间越来越晚，很难像以前那样坚持下来。最让我心寒的是，有一次发工资老板觉得加班费太多了，直接砍掉了所有人一半的加班工资。在那个地方，我觉得得不到成长。所以，我辞职了。<br>&emsp;&emsp;辞职以后，我在自己租的房子里待了近两个月。之前我住在离公司很远的一个学校，上下班不方便，所以，我搬出来了，搬进了一个离公司不算太远的地方。<br></font></p>
+<h1 id="现在"><a href="#现在" class="headerlink" title="现在"></a>现在</h1><p><font size="4"><br>&emsp;&emsp;在我租的房子里，我待了两个月，想准备春招。可是后来，因为家里的事与个人感情问题，我耽搁了许久。等我想要投入进学习的时候，我总觉得我无法投入自己的注意进学习，总想拖延着。不知从什么时候开始，我变得这般堕落了。很久以前就买来的《算法导论》，到现在也就翻了一个章节。以前的晚上，我都会坚持去阅读，提炼灵魂、净化心灵。现如今的我，一直是睡前看几眼直播。总觉得我想做的事情被别的事耽搁，等到真正想做，又发现时间所剩无几。然后以焦急的心态投入进去，到头来的效率也不高。<br> </font></p>
+<h1 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h1><p><font size="4"><br>&emsp;&emsp;四月份开始投简历，网投了很多家，大多没有回音，少数几家会有笔试邀请，可是后来做完笔试题后，又没有消息了。改变思路，从牛客网上查找企业校招日历。发现有些互联网公司会去北京的大学招人，所以约了跟自己一样在找工作的同学去投了。面的第一家公司，去之前就已经知道是996的制度，但是想去增加一下面试经验。（我承认最开始的我没有端正态度，没有好好应对每一次机会）面试的第一面，我跟面试官聊的挺好，他觉得我的算法跟技术还不错，一面也就顺利通过了。等到二面的时候，二面面试官问了我关于链表的一个很简单的问题，让我实现它。当时的我不知道等到二面的时候，二面面试官问了我关于链表的一个很简单的问题，让我实现它。当时的我不知道为什么蒙了，没有很好的实现，后来问了我一些别的问题，我没有答好，而这些问题是我本就会的，所以，我二面挂了。挂了之后，回家一边准备投简历面试，一边准备毕设项目答辩。时间越来越紧，心态也越来越焦急，答辩迟迟未准备，工作也没有找到，机会也越来越少。<br></font></p>
+<h1 id="反思"><a href="#反思" class="headerlink" title="反思"></a>反思</h1><p><font size="4"><br>&emsp;&emsp;原来这就是我么？一个憧憬着未来，做着美梦，不肯努力投入进去，一直在逃避的人。记得在以前实习基地的时候，我内心在笑话一个同寝室的室友一直在看直播，二十四小时手机不离手，上课看，下课看，吃饭看，睡觉前看。我一直在笑话他，可是现如今的我跟他有什么区别呢？我一直在逃避，我又有什么资格笑话别人呢？我才是那个被笑话的人。<br></font></p>
+<h1 id="救赎"><a href="#救赎" class="headerlink" title="救赎"></a>救赎</h1><p><font size="4"><br>&emsp;&emsp;我想找回以前的我，一个肯努力上进的人，一个想法设法地填补自己的人，找回以前的自我，重回以前的轨迹。拥有规律的作息时间，每个月读一到两本有意义的书、每个月坚持看几场有意义的电影、闲下来的时候去锻炼身体，提升自己，清楚自己身上背负的责任！现在的困境往往是以前不投入的后果，但这并不代表会一直这样下去。想要改变，就必须与以前的自己告别。努力下去，如果不甘现状，就更应该努力下去。只有越努力，才会感到越幸运。如果一直这样的状态下去，就会成为没有理想的人。没有理想的我，只会伤心、没有底气，住在自己的“猪圈”里孤独的死去。<br></font></p>
 
       
     </div>
@@ -397,7 +395,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://qiqibest.top/2018/09/01/网络编程/" title="网络编程">http://qiqibest.top/2018/09/01/网络编程/</a>
+    <a href="http://qiqibest.top/2019/04/28/反思/" title="反思">http://qiqibest.top/2019/04/28/反思/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -419,8 +417,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/01/排序/" rel="next" title="排序">
-                <i class="fa fa-chevron-left"></i> 排序
+              <a href="/2018/09/05/遍历/" rel="next" title="遍历">
+                <i class="fa fa-chevron-left"></i> 遍历
               </a>
             
           </div>
@@ -428,10 +426,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/01/ArrayList与LinkedList/" rel="prev" title="ArrayList与LinkedList">
-                ArrayList与LinkedList <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -547,7 +541,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在最前面"><span class="nav-number">1.</span> <span class="nav-text">写在最前面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、同步"><span class="nav-number">1.1.</span> <span class="nav-text">一、同步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、异步"><span class="nav-number">1.2.</span> <span class="nav-text">二、异步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、阻塞"><span class="nav-number">1.3.</span> <span class="nav-text">三、阻塞</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、非阻塞"><span class="nav-number">1.4.</span> <span class="nav-text">四、非阻塞</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、四种IO模型场景"><span class="nav-number">1.5.</span> <span class="nav-text">五、四种IO模型场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#学习与工作"><span class="nav-number">1.</span> <span class="nav-text">学习与工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#现在"><span class="nav-number">2.</span> <span class="nav-text">现在</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#工作"><span class="nav-number">3.</span> <span class="nav-text">工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#反思"><span class="nav-number">4.</span> <span class="nav-text">反思</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#救赎"><span class="nav-number">5.</span> <span class="nav-text">救赎</span></a></li></ol></div>
             
 
           </div>
